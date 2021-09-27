@@ -79,103 +79,14 @@ The editor has a navigation bar that allows you to run a selection, a line, or t
 
 ![Spyder IDE](spyder-editor-navbar.png)
 
-## Performing spatial joins
-Review [Performing spatial joins](http://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html) to see our objective. 
+#### Follow GeoPandas Intro Exercise
+Follow the [Geopandas Getting Started Introduction](https://geopandas.org/getting_started/introduction.html), taking screenshots 
+of your workspace at the following parts of the intro:
 
-### Download and extract the data:
+- `screencap-buffered-centroid.png` -> workspace showing `gdf` after reading `nybb` from file
+- `screencap-buffered-centroid.png` -> workspace showing contents of a `GeoDataFrame` showing distances from the first one
+- `screencap-buffered-centroid.png` -> plot showing just the centroid locations
+- `screencap-buffered-centroid.png` -> plot showing buffered centroids
 
-- [NY Boros](http://www.qgistutorials.com/downloads/nybb_19a.zip)
-- [Pavement Ratings](http://www.qgistutorials.com/downloads/V_SSS_SEGMENTRATING_1.zip)
-
-You will want to save them to your repo so that they will be accessible in your `shared` directory but for the sake of unnecessary github commits, don't commit them :-)
-
-Open `Spyder` and create a new document in this repo named `spatial_join.py`.
-
-### Load the data in python
-We are going to use `geopandas` and `descartes` in this lab, so import them:
-```
-import geopandas
-import descartes
-```
-`geopandas` can read shapefiles. Using the path to the extracted shapefile above:
-```
-nybb = geopandas.read_file('/Users/aaryno/classes/gist604b/fall-2019-online/data/nybb_19a/nybb.shp')
-```
-Next, do some basic exploration of the data and the python structures made from it:
-```
-print(nybb)
-type(nybb)
-nybb.head()
-```
-Note that the `.head()` method is acting _on_ the geopandas dataframe and will print the values of the first 5 lines. Next, plot it (the `.plot()` method is also acting on the geopandas dataframe and plots it using the `matplotlib` library:
-```
-nybb.plot()
-```
-Do the same for the street pavement rating:
-```
-vss = geopandas.read_file('/Users/aaryno/classes/gist604b/fall-2019-online/data/V_SSS_SEGMENTRATING_1/dot_V_SSS_SEGMENTRATING_1_20190129.shp')
-```
-And explore:
-```
-print(vss)
-type(vss)
-vss.head()
-vss.plot()
-```
-
-### Subset the Streets data
-Geopandas gives us the ability to use array-indexing to subset the data. Let's construct a filter to get rid of the data where `RatingWord` is not `NR`:
-
-View the data:
-```
-vss['RatingWord']
-```
-Construct a list of boolean values equal to the length of `vss` in which the value is `True` if `RatingWord` is not equal to `NR` and False otherwise:
-```
-vss['RatingWord'] != 'NR']
-```
-Now we can subset `vss` based on which values of ^ are `True`:
-```
-vss_sub = vss[vss['RatingWord'] != 'NR']
-```
-Now we have a new `GeoDataFrame` named `vss_sub` with fewer rows. Take a look at its shape and compare to `vss` to confirm:
-```
-vss_sub.shape
-vss.shape
-```
-### Perform spatial join between boros and streets:
-Geopandas has an `sjoin` [[doc](http://geopandas.org/reference/geopandas.sjoin.html)] operator to perform spatial joins:
-```
-nybb_with_vss = geopandas.sjoin(nybb, vss_sub)
-```
-Take a look:
-```
-type(nybb_with_vss)
-nybb_with_vss.head()
-```
-
-### Summarize stats
-We have successfully given the streets the names of the boros they reside in. Not let's summarize. This functionality is
-inherited from the `pandas` library:
-
-```
-mean_rating_by_boro = nybb_with_vss.groupby(['BoroCode'])['Rating_B'].mean()
-```
-
-This creates a data frame containing the mean of `Rating_B` bu `BoroCode` across the `nybb_with_vss` dataframe.
-```
-type(mean_rating_by_boro)
-head(mean_rating_by_boro)
-```
-
-### Join pavement summary stats to boros
-The above is just a table. To give those attributes to the original boros data we need to do a table join, which in 
-geopandas parlance is `.merge()`:
-```
-nybb_with_mean_ratings = nybb.merge(mean_rating_by_boro, on='BoroCode' )
-nybb_with_mean_ratings.head()
-```
-
-### Deliverable
-Save your final python file as `spatial_join.py` in this repository. Additionally, take a screenshot showing the results
-of the final step in Part 1 and save it as `spatial_join.png`.
+### Deliverables
+Include the 4 screenshots as files in a new branch named `geopandas` and create a new Pull Request to join `geopandas` with `master` _but do not merge it yourself_.
