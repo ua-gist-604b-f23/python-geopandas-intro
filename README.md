@@ -83,10 +83,10 @@ The editor has a navigation bar that allows you to run a selection, a line, or t
 Follow the [Geopandas Getting Started Introduction](https://geopandas.org/getting_started/introduction.html), taking screenshots 
 of your workspace at the following parts of the intro:
 
-- `screencap-buffered-centroid.png` -> workspace showing `gdf` after reading `nybb` from file
-- `screencap-buffered-centroid.png` -> workspace showing contents of a `GeoDataFrame` showing distances from the first one
-- `screencap-buffered-centroid.png` -> plot showing just the centroid locations
-- `screencap-buffered-centroid.png` -> plot showing buffered centroids
+- `screencap-workspace-gdf.png` -> workspace showing `gdf` after reading `nybb` from file
+- `screencap-gdf-dist` -> workspace showing contents of a `GeoDataFrame` showing distances from the first one
+- `screencap-gdf-centroids.png` -> plot showing just the centroid locations
+- `screencap-gdf-buffered-centroid.png` -> plot showing buffered centroids
 
 ### Deliverables
 Include the 4 screenshots as files in a new branch named `geopandas` and create a new Pull Request to join `geopandas` with `master` _but do not merge it yourself_.
