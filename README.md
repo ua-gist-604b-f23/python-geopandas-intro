@@ -10,11 +10,9 @@ Browse/read the GeoPandas [user guide](https://geopandas.org/docs/user_guide.htm
 
 - Tutorial: https://geopandas.org/getting_started/introduction.html
 - User Guide: https://geopandas.org/docs/user_guide.html
-- 
-#### Anaconda
-Python relies on libraries that extend the basic functionality. These libraries are installed and managed primarily by two different methods. `pip` may be more familiar to you if you have used python previously. `conda` is what we will use because it manages dependencies better and the conda library repos (aka `channels`) support the geospatial libraries better than `pip`'s `PyPi`.
 
-We won't get into the specifics of how to install the packages themselves though you are encouraged to create your own conda install, your own conda environment(s), and install your own libraries. However, for building an application that uses a variety of geospatial packages this is quite challenging because different libraries may depend on the same core geo or math library (which is good) but may also require a different version (which is bad and causes us to fail to install the library). To complicate matters, different versions of libraries may have different dependency versions. To make it even more complex and infurirating, different channels or repos may have libraries that have their own nuanced dependencies. Not to make it even worse, but the order of installation also makes a difference. Therefore, for this class we are going to be using a docker container that already has the right versions of libraries installed that we will need for this assignment. 
+#### Anaconda and Spyder
+Python relies on libraries that extend the basic functionality. These libraries are installed and managed primarily by two different methods. `pip` may be more familiar to you if you have used python previously. `conda` is what we will use because it manages dependencies better and the conda library repos (aka `channels`) support the geospatial libraries better than `pip`'s `PyPi`.
 
 #### Integrated Development Environment (IDE) - Spyder
 When developing code or working with structured files in HTML, JSON, YAML, etc., it is helpful to use a special type of text editor that does syntax highlighting as well as more advanced functions such as being able to complete typing commands or variables because they are context-aware as well as have integrations with runtimes. For this class we will be using `Spyder`, an IDE for Python that includes smart editing, integrated runtime, and a variable explorer, allowing you to visually inspect your variables as you are running through your program. Like the geospatial libraries, this is a python library with its own dependencies and I have wrapped it up in the same docker container. Since it is a Graphical User Interface (GUI), it has special requirements for building windows and interacting with your mouse and keyboard that are slightly morecomplicated running through docker so we are going to be running them inside a browser. 
@@ -33,19 +31,13 @@ The objective of this lab is to reproduce one of the QGIS Tutorials you did prev
 - [Performing spatial joins](http://www.qgistutorials.com/en/docs/3/performing_spatial_joins.html)
 
 ### Prerequisites
-- Python 3 must be installed [Download](https://www.python.org/downloads/)
-- Docker must be installed
-
-### Deliverables
-- `spatial_join.py`
-- `spatial_join.png`
+- Anaconda installed with Python 3.7
 
 ### Directions
 
-#### Install Anaconda and setup a geospatial environment
-Download and install Anaconda [[link](https://www.anaconda.com/products/individual)].
+#### Anaconda environment setup
 
-Launch Anaconda Navigator.  and select "Environments". We are going to create a new environment for this assignment. 
+Launch Anaconda Navigator and select "Environments". We are going to create a new environment for this assignment. 
 Click the "Create" button to create a new environment. Name it "geo-3.7"
 On the right side of Navigator is a list of installed libraries. Change the drop-down from `installed` to `All`, then search for "geopandas".
 If it doesn't show up, make sure that the `All` is selected in the drop-down.
