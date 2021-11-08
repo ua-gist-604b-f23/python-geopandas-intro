@@ -39,10 +39,9 @@ On the right side of Navigator is a list of installed libraries. Change the drop
 If it doesn't show up, make sure that the `All` is selected in the drop-down.
 Click on the open box next to the name of the package to select it for download. Then, at the bottom of the panel, click on the green `Apply` button.
 
-Do the same for `rasterio` and `rasterstats`. In the end, you will have installed the following libraries:
+Do the same for `rasterio`. In the end, you will have installed the following libraries:
 - `geopandas`
 - `rasterio`
-- `rasterstats`
 
 After installing the geospatial libraries in the `geo-3.7` environment, click on the big `Home` button at the top-left of the Navigator window to take you back to Navigator home where the applications are listed. In the drop-down next to `Applications On`, select the `geo-3.7` Environment. Next, find the icon labeled `Spyder` and click `Install`. Once it's installed, the `Install` button will change to a `Launch` button.
 
