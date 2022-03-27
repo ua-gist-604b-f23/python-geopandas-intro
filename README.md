@@ -71,7 +71,7 @@ Follow the [Geopandas Getting Started Introduction](https://geopandas.org/gettin
 of your workspace at the following parts of the intro:
 
 - `screencap-workspace-gdf.png` -> workspace showing `gdf` after reading `nybb` from file
-- `screencap-gdf-dist` -> workspace showing contents of a `GeoDataFrame` showing distances from the first one
+- `screencap-gdf-dist.png` -> workspace showing contents of a `GeoDataFrame` showing distances from the first one
 - `screencap-gdf-centroids.png` -> plot showing just the centroid locations
 - `screencap-gdf-buffered-centroid.png` -> plot showing buffered centroids
 
