@@ -19,7 +19,7 @@ jobs:
       - name: Required files exist
         if: steps.check_1_files.outputs.files_exists != 'true'
         run: |
-          echo Required file, 'lesson1.png', is missing
+          echo Required file, 'screencap-workspace-gdf.png', is missing
           exit 1
           
       - name: Check 2 files
@@ -31,7 +31,7 @@ jobs:
       - name: Required files exist
         if: steps.check_2_files.outputs.files_exists != 'true'
         run: |
-          echo Required file, 'lesson2.png', is missing
+          echo Required file, 'screencap-gdf-dist.png', is missing
           exit 1
           
       - name: Check 3 files
@@ -43,7 +43,7 @@ jobs:
       - name: Required files exist
         if: steps.check_3_files.outputs.files_exists != 'true'
         run: |
-          echo Required file, 'lesson3.png', is missing
+          echo Required file, 'screencap-gdf-centroids.png', is missing
           exit 1
       - name: Check 4 files
         id: check_4_files
@@ -54,6 +54,6 @@ jobs:
       - name: Required files exist
         if: steps.check_4_files.outputs.files_exists != 'true'
         run: |
-          echo Required file, 'lesson4.png', is missing
+          echo Required file, 'screencap-gdf-buffered-centroid.png', is missing
           exit 1
           
