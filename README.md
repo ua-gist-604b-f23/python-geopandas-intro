@@ -36,7 +36,7 @@ pip install geopandas
 ```
 Unless there is an error installing the library you will get a `Successfully installed...` messages in the terminal output: 
 
-![pip-install-geopandas-2.png]
+![pip-install-geopandas-2.png](./media/pip-install-geopandas-2.png)
 
 #### Create a new Jupyter Notebook
 Create a new file in your `Explorer` panel named `assignment.ipynb`. When you open it you will get a dialog to install Extensions for Jupyter and Python. Remember that each codespace is a brand new environment built from basic docker images so when we start a new one we will have to reinstall the extensions. 
