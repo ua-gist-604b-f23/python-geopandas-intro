@@ -68,7 +68,12 @@ of your codespace at the following parts of the intro:
 - `screencap-gdf-centroids.png` -> plot showing just the centroid locations
 - `screencap-gdf-buffered-centroid.png` -> plot showing buffered centroids
 
+
 ### Deliverables
 Include the 4 screenshots as files in a new branch named `geopandas` and create a new Pull Request to join `geopandas` with `master` _but do not merge it yourself_.
 
-Also include the `assignment.ipynb` file.
+- `assignment.ipynb`
+- `screencap-workspace-gdf.png` 
+- `screencap-gdf-dist.png` 
+- `screencap-gdf-centroids.png`
+- `screencap-gdf-buffered-centroid.png`
